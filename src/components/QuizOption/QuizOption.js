@@ -1,10 +1,14 @@
 import React from "react";
 
-const QuizOption = ({ option }) => {
+const QuizOption = ({ option, idx, handleAnswer }) => {
   return (
-    <div className="flex">
-      <input type="radio" name="" id="" />
-      <label htmlFor="">{option}</label>
+    <div>
+      <div onClick={() => handleAnswer(option)}>
+        <input type="radio" name="opt" id={idx} />
+        <label className="ml-2" htmlFor={idx}>
+          {option}
+        </label>
+      </div>
     </div>
   );
 };

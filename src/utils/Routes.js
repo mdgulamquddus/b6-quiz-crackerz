@@ -7,11 +7,13 @@ import Topics from "../components/Topics/Topics";
 import { fetchApi } from "./FetchApi";
 import Quiz from "../components/Quiz/Quiz";
 import fetchQuiz from "./QuizData";
+import Page404 from "../components/404/Page404";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <Page404 />,
     loader: fetchApi,
     children: [
       {
