@@ -5,6 +5,8 @@ import Home from "../components/Home/Home";
 import Statistics from "../components/Statistics/Statistics";
 import Topics from "../components/Topics/Topics";
 import { fetchApi } from "./FetchApi";
+import Quiz from "../components/Quiz/Quiz";
+import fetchQuiz from "./QuizData";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,13 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog />,
+      },
+      {
+        path: "/courses/:quizID",
+        loader: async ({ params }) => {
+          return fetchQuiz(params.quizID);
+        },
+        element: <Quiz />,
       },
     ],
   },
