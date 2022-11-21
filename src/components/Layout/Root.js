@@ -6,7 +6,6 @@ export const CoursesContext = createContext([]);
 
 const Root = () => {
   const courses = useLoaderData();
-  console.log(courses);
   return (
     <CoursesContext.Provider value={courses}>
       <Header />
