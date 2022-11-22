@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactTooltip from "react-tooltip";
 import { AiFillEye } from "react-icons/ai";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import QuizOption from "../QuizOption/QuizOption";
+import CorrectAns from "../CorrectAns/CorrectAns";
 
 const QuizSingle = ({ quiz, idx }) => {
   const { question, options, correctAnswer } = quiz;
-
   const handleAnswer = (quizOpt) => {
     if (quizOpt === correctAnswer) {
       alert("Answer is Correct");
@@ -17,10 +17,11 @@ const QuizSingle = ({ quiz, idx }) => {
       toast.error("Wrong Answer", { autoClose: 500 });
     }
   };
-  const answer = () => {
-    alert(correctAnswer);
-    toast.success(correctAnswer, { autoClose: 500 });
-  };
+  const [open, setOpen] = useState(false);
+  // const answer = () => {
+  //   alert(correctAnswer);
+  //   toast.success(correctAnswer, { autoClose: 500 });
+  // };
   return (
     <div className="gird  gap-4 mb-4 p-5 border border-gray-100 shadow-md justify-center">
       <div className="flex">
@@ -29,7 +30,7 @@ const QuizSingle = ({ quiz, idx }) => {
         </h2>
         <ReactTooltip />
         <button
-          onClick={() => answer()}
+          onClick={() => setOpen(true)}
           data-tip="Correct Answer"
           className="cursor-pointer"
         >
@@ -47,6 +48,7 @@ const QuizSingle = ({ quiz, idx }) => {
           />
         ))}
       </div>
+      <CorrectAns open={open} correctAnswer={correctAnswer} />
     </div>
   );
 };

@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         element: <Blog />,
       },
       {
-        path: "/courses/:quizID",
+        path: "/courses/:quizID/:courseName",
         loader: async ({ params }) => {
           return fetchQuiz(params.quizID);
         },
