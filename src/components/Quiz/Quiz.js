@@ -8,7 +8,7 @@ const Quiz = () => {
   return (
     <div className="md:w-2/4 w-full mx-auto my-10 grid gap-4">
       <h2 className="text-center text-2xl font-bold">
-        Course Of {id.courseName}
+        Quiz Of {id.courseName}
       </h2>
       {questions.map((quiz, idx) => (
         <QuizSingle key={quiz.id} quiz={quiz} idx={idx} />

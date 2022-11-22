@@ -18,10 +18,6 @@ const QuizSingle = ({ quiz, idx }) => {
     }
   };
   const [open, setOpen] = useState(false);
-  // const answer = () => {
-  //   alert(correctAnswer);
-  //   toast.success(correctAnswer, { autoClose: 500 });
-  // };
   return (
     <div className="gird  gap-4 mb-4 p-5 border border-gray-100 shadow-md justify-center">
       <div className="flex">
@@ -30,7 +26,7 @@ const QuizSingle = ({ quiz, idx }) => {
         </h2>
         <ReactTooltip />
         <button
-          onClick={() => setOpen(true)}
+          onClick={() => setOpen(!open)}
           data-tip="Correct Answer"
           className="cursor-pointer"
         >
@@ -48,7 +44,7 @@ const QuizSingle = ({ quiz, idx }) => {
           />
         ))}
       </div>
-      <CorrectAns open={open} correctAnswer={correctAnswer} />
+      {open ? <CorrectAns correctAnswer={correctAnswer} /> : null}
     </div>
   );
 };
