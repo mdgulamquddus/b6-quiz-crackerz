@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Getting Started with Quiz Web Mania App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was Github Link with [Quiz Web Mania](https://github.com/programming-hero-web-course2/b6-quiz-crackerz-mdgulamquddus).
+
+This project was Live Link with [Quiz Web Mania](https://zippy-muffin-7abb18.netlify.app/).
 
 ## Available Scripts
 
